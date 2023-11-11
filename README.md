@@ -12,3 +12,4 @@ Uma plataforma social de conteúdo digital focada no público universitário par
 
 - Diagrama de classes: https://drive.google.com/file/d/1XhTQu55-ZwzxTN-pVf8EAmAS5ORCBptV/view?usp=sharing
 - Diagrama de Sequência: https://drive.google.com/file/d/14hqxtdcPxKqUESflCSGCsCI_HuhBiAJd/view?usp=sharing
+- Projeto de Design Figma: https://www.figma.com/file/0wCJa2TgkLhDuPBNWMqSjX/Projeto-U4L?type=design&node-id=0-1&mode=design
