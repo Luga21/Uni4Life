@@ -25,8 +25,8 @@ const Login = () => {
           <div className="frm_login">
             <h1>Login</h1>
             <form>
-              <input type="text" placeholder="Username" />
-              <input type="password" placeholder="Password" />
+              <input type="text" placeholder="Nome" />
+              <input type="password" placeholder="Senha" />
               <button onClick={handleLogin}>Login</button>
             </form>
           </div>

@@ -26,6 +26,28 @@
       margin-top: 20vh;
       align-items: center;
       justify-content: center;
+
+      h3, p {
+          color: #2d1070;
+        }
+
+      h1 {
+          font-size: 93px;
+          line-height: 100px;
+          background: linear-gradient(to right,
+              white 10%,
+              #d0bcff 20%,
+              #8d74c9 30%,
+              #5d4594 40%,
+              #543c8b 50%,
+              #4d3585 60%,
+              #462e7e 70%,
+              rgb(54, 33, 102) 80%,
+              #331970 90%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
+
     }
 
     .right_login_footer {
@@ -43,10 +65,15 @@
         padding: 10px;
         border: none;
         border-radius: 5px;
-        background-color: #938eef;
+        background-color: #2d1070;
         color: white;
         font-weight: bold;
         cursor: pointer;
+      }
+      
+      button:hover {
+        background-color: #827cf0;
+        transition: 0.4s;
       }
     }
 
@@ -55,7 +82,7 @@
       display: flex;
       flex-direction: column;
       h1 {
-      color: #555;
+      color: #2d1070;
       font-size: 50px;
     }
     
@@ -73,14 +100,18 @@
       }
       
       button {
-        width: 40%;
+        width: 30%;
         padding: 10px;
         border: none;
         border-radius: 5px;
-        background-color: #938eef;
+        background-color: #2d1070;
         color: white;
         font-weight: bold;
         cursor: pointer;
+      }
+      button:hover{
+        background-color: #827cf0;
+        transition: 0.4s;
       }
     }
   }

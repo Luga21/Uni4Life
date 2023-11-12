@@ -1,87 +1,127 @@
 .register {
-  height: 100vh;
-  background-color: rgb(193, 190, 255);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  background-color: rgb(255, 255, 255);
+  min-height: 600px;
+  .right {
+    background-image: url('../../assets/logoU4L.svg');
+    background-repeat: repeat;
+    float: right;
+    width: 40vw;
+    height: 100vh;
+  }
 
-  .card {
-    width: 50%;
+  .left {
+    float: left;
+    background-color: #3366FF;
+    width: 60vw;
+    height: 100vh;
+    border-radius: 0px 10px 10px 0px;
     display: flex;
-    flex-direction: row-reverse;
-    background-color: white;
-    border-radius: 10px;
-    min-height: 600px;
-    overflow: hidden;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+    color: white;
 
-    .left {
-      flex: 1;
-      background: linear-gradient(rgba(39, 11, 96, 0.5), rgba(39, 11, 96, 0.5)),
-        url("https://images.pexels.com/photos/4881619/pexels-photo-4881619.jpeg?auto=compress&cs=tinysrgb&w=1600")
-          center;
-      background-size: cover;
-      padding: 50px;
-      display: flex;
-      flex-direction: column;
-      gap: 30px;
-      color: white;
+    .left_register_header {
+      width: 20vw;
+      margin-top: 80px;
+      align-items: center;
+      justify-content: center;
 
-      h1 {
-        font-size: 100px;
+      h3{
+        color: #2d1070;
+      }
+      h1{
+        font-size: 93px;
         line-height: 100px;
-      }
-      
-      p {
-      }
-
-      span {
-        font-size: 14px;
-      }
-      
-      button {
-        width: 50%;
-        padding: 10px;
-        border: none;
-        background-color: white;
-        color: rebeccapurple;
-        font-weight: bold;
-        cursor: pointer;
+        background: linear-gradient(to right,
+              white 10%,
+              #d0bcff 20%,
+              #8d74c9 30%,
+              #5d4594 40%,
+              #543c8b 50%,
+              #4d3585 60%,
+              #462e7e 70%,
+              rgb(54, 33, 102) 80%,
+              #331970 90%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
       }
     }
 
-    .right {
-      flex: 1;
-      padding: 50px;
+    .frm_Cadastro {
+      width: 20vw;
       display: flex;
       flex-direction: column;
-      gap: 50px;
-      justify-content: center;
 
       h1 {
-      color: #555;
+        color: #2d1070;
+        font-size: 50px;
       }
-      
+
       form {
         display: flex;
         flex-direction: column;
         gap: 30px;
-        
+
         input {
-        border: none;
-        border-bottom: 1px solid lightgray;
-        padding: 20px 10px;
+          width: 100%;
+          border: none;
+          border-radius: 5px;
+          border-bottom: 1px solid lightgray;
+          padding: 20px 10px;
         }
-        
+
         button {
-          width: 50%;
+          width: 40%;
           padding: 10px;
           border: none;
-          background-color: #938eef;
+          border-radius: 5px;
+          background-color: #2d1070;
           color: white;
           font-weight: bold;
           cursor: pointer;
         }
+        
+        button:hover {
+          background-color: #827cf0;
+          transition: 0.4s;
+        }
       }
+    }
+
+    .left_register_footer {
+      width: 20vw;
+      display: flex;
+      align-items: baseline;
+      justify-content: left;
+      flex-direction: row;
+      margin-top: 30px;
+      gap: 10px;
+
+      button{
+        margin-top: 30px;
+        width: 200%;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        background-color: #2d1070;
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: #827cf0;
+        transition: 0.4s;
+      }
+    }
+    h1 {
+      font-size: 100px;
+      line-height: 100px;
+    }
+
+    p {
+      font-size: large;
+      font-weight: bold;
     }
   }
 }
