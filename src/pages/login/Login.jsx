@@ -13,25 +13,29 @@ const Login = () => {
   return (
     <div className="login">
       <div className="card">
-        <div className="left">
-          <h1>Hello World.</h1>
-          <p>OLAAAAA
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero cum,
-            alias totam numquam ipsa exercitationem dignissimos, error nam,
-            consequatur.
-          </p>
-          <span>Don't you have an account?</span>
-          <Link to="/register">
-            <button>Register</button>
-          </Link>
-        </div>
+        <div className="left"></div>
         <div className="right">
-          <h1>Login</h1>
-          <form>
-            <input type="text" placeholder="Username" />
-            <input type="password" placeholder="Password" />
-            <button onClick={handleLogin}>Login</button>
-          </form>
+          <div className="right_login_header">
+            <h3>
+            Bem Vindo(a) ao 
+            </h3>
+            <h1>Uni4Life</h1>
+            <p>Feliz que você voltou! 😃</p>
+          </div>
+          <div className="frm_login">
+            <h1>Login</h1>
+            <form>
+              <input type="text" placeholder="Username" />
+              <input type="password" placeholder="Password" />
+              <button onClick={handleLogin}>Login</button>
+            </form>
+          </div>
+          <div className="right_login_footer">
+            <p>Não tem uma conta?</p>
+            <Link to="/register">
+              <button>Registre-se</button>
+            </Link>
+          </div>
         </div>
       </div>
     </div>

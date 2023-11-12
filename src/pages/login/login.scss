@@ -1,86 +1,96 @@
 .login {
-  height: 100vh;
-  background-color: rgb(193, 190, 255);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  background-color: rgb(255, 255, 255);
+  min-height: 600px;
 
-  .card {
-    width: 50%;
+  .left{
+    background-image: url('../../assets/logoU4L.svg');
+    background-repeat: repeat;
+    float: left;
+    width: 40vw;
+    height: 100vh;
+  }
+  
+  .right {
+    background-color: #3366FF;
+    width: 60vw;
+    height: 100vh;
+    border-radius: 10px 0px 0px 10px;
     display: flex;
-    background-color: white;
-    border-radius: 10px;
-    min-height: 600px;
-    overflow: hidden;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+    color: white;
+    
+    .right_login_header{
+      width: 20vw;
+      margin-top: 20vh;
+      align-items: center;
+      justify-content: center;
+    }
 
-    .left {
-      flex: 1;
-      background: linear-gradient(rgba(39, 11, 96, 0.5), rgba(39, 11, 96, 0.5)),
-        url("https://images.pexels.com/photos/3228727/pexels-photo-3228727.jpeg?auto=compress&cs=tinysrgb&w=1600")
-          center;
-      background-size: cover;
-      padding: 50px;
+    .right_login_footer {
+      width: 20vw;
       display: flex;
-      flex-direction: column;
-      gap: 30px;
-      color: white;
+      align-items: baseline;
+      justify-content: left;
+      flex-direction: row;
+      margin-top: 30px;
+      gap: 10px;
 
-      h1 {
-        font-size: 100px;
-        line-height: 100px;
-      }
-      
-      p {
-      }
-
-      span {
-        font-size: 14px;
-      }
-      
       button {
-        width: 50%;
+        margin-top: 50px;
+        width: 100%;
         padding: 10px;
         border: none;
-        background-color: white;
-        color: rebeccapurple;
+        border-radius: 5px;
+        background-color: #938eef;
+        color: white;
         font-weight: bold;
         cursor: pointer;
       }
     }
 
-    .right {
-      flex: 1;
-      padding: 50px;
+    .frm_login {
+      width: 20vw;
       display: flex;
       flex-direction: column;
-      gap: 50px;
-      justify-content: center;
-
       h1 {
       color: #555;
+      font-size: 50px;
+    }
+    
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      
+      input {
+      width: 100%;
+      border: none;
+      border-radius: 5px;
+      border-bottom: 1px solid lightgray;
+      padding: 20px 10px;
       }
       
-      form {
-        display: flex;
-        flex-direction: column;
-        gap: 30px;
-        
-        input {
+      button {
+        width: 40%;
+        padding: 10px;
         border: none;
-        border-bottom: 1px solid lightgray;
-        padding: 20px 10px;
-        }
-        
-        button {
-          width: 50%;
-          padding: 10px;
-          border: none;
-          background-color: #938eef;
-          color: white;
-          font-weight: bold;
-          cursor: pointer;
-        }
+        border-radius: 5px;
+        background-color: #938eef;
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
       }
+    }
+  }
+    h1 {
+      font-size: 100px;
+      line-height: 100px;
+    }
+    p{
+      font-size: large;
+      font-weight: bold;
     }
   }
 }
