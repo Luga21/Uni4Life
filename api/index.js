@@ -8,6 +8,9 @@ import relationshipRoutes from "./routes/relationships.js"
 import cors from "cors"
 import multer from "multer"
 import cookieParser from "cookie-parser"
+
+
+
 const app = express()
 
 //middlewares
