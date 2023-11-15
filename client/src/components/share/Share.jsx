@@ -5,7 +5,7 @@ import Friend from "../../assets/friend.png";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../context/authContext";
 import { useMutation, useQueryClient } from '@tanstack/react-query'
-import { makeRequest } from '../../../axios'
+import { makeRequest } from '../../axios'
 
 const Share = () => {
   // eslint-disable-next-line no-unused-vars

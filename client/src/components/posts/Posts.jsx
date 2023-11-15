@@ -5,6 +5,7 @@ import { useQuery } from 'react-query'
 
 
 const Posts = () => {
+  // eslint-disable-next-line no-unused-vars
   const { isLoading, error, data } = useQuery(["posts"], () =>
     makeRequest.get("/posts").then((res) => res.data)
   );
