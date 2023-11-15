@@ -1,7 +1,7 @@
 import { makeRequest } from "../../axios";
 import Post from "../post/Post";
 import "./posts.scss";
-import { useQuery } from 'react-query'
+import { useQuery } from 'react-query';
 
 
 const Posts = () => {
@@ -14,12 +14,13 @@ const Posts = () => {
 
   return (
     <div className="posts">
-      {isLoading 
-        
-        ? "loading" 
+      {error  
+        ? "ALguma coisa não ocorreu como esperado"
+        : isLoading 
+        ? "carregando" 
         : data // Verifica se data existe antes de chamar map
           ? data.map((post) => <Post post={post} key={post.id} />)
-          : "No data available"}
+          : "No data available" }
     </div>
   );
 };
