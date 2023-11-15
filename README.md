@@ -25,7 +25,7 @@ CREATE TABLE `users` (
   `id` int NOT NULL AUTO_INCREMENT,
   `username` varchar(45) NOT NULL,
   `email` varchar(45) NOT NULL,
-  `passoword` varchar(200) NOT NULL,
+  `password` varchar(200) NOT NULL,
   `name` varchar(45) NOT NULL,
   `coverPic` varchar(100) DEFAULT NULL,
   `profilePic` varchar(100) DEFAULT NULL,
