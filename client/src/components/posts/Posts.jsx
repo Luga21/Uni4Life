@@ -7,7 +7,9 @@ import { useQuery } from 'react-query';
 const Posts = () => {
   // eslint-disable-next-line no-unused-vars
   const { isLoading, error, data } = useQuery(["posts"], () =>
-    makeRequest.get("/posts").then((res) => res.data)
+    makeRequest.get("/posts").then((res) => {
+      return res.data;
+    })
   );
 
   console.log(data);
@@ -20,7 +22,7 @@ const Posts = () => {
         ? "carregando" 
         : data // Verifica se data existe antes de chamar map
           ? data.map((post) => <Post post={post} key={post.id} />)
-          : "No data available" }
+          : "Nenhum dado encontrado" }
     </div>
   );
 };
