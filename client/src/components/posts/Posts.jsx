@@ -19,7 +19,7 @@ const Posts = () => {
         ? "carregando" 
         : data // Verifica se data existe antes de chamar map
           ? data.map((post) => <Post post={post} key={post.id} />)
-          : "No data available" }
+          : "Nenhum dado encontrado" }
     </div>
   );
 };
