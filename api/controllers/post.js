@@ -22,7 +22,7 @@ export const getPosts = (req, res) => {
     const values =
       userId !== 'undefined' ? [userId] : [userInfo.id, userInfo.id]
 
-    db.query(q, values, (err, data) => {
+    db.query(q, (err, data) => {
       if (err) return res.status(500).json(err)
       return res.status(200).json(data)
     })
