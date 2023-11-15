@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import express from "express"
 import authRoutes from "./routes/auth.js"
 import userRoutes from "./routes/users.js"
@@ -50,15 +49,7 @@ app.use("/api/relationships", relationshipRoutes)
 app.listen(8800, () => {
   console.log("API working!")
 })
-=======
-import Express from "express";
-
-const app = Express();
-import userRoutes from "./routes/users.js";
-
-app.use("/api/users", userRoutes);
 
 app.listen(8800, () => {
-  console.log("Está funcionando");
-});
->>>>>>> de0f159b704ab154dad1d4708a16e09dc40b0ca8
+  console.log("Está funcionando")
+})
