@@ -47,9 +47,5 @@ app.use("/api/likes", likeRoutes)
 app.use("/api/relationships", relationshipRoutes)
 
 app.listen(8800, () => {
-  console.log("API working!")
-})
-
-app.listen(8800, () => {
   console.log("Está funcionando")
 })
