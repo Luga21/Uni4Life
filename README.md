@@ -83,7 +83,7 @@ CREATE TABLE `likes` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
 
 ```
-- Tabela sotries
+- Tabela stories
 ```
 CREATE TABLE `stories` (
   `id` int NOT NULL AUTO_INCREMENT,
