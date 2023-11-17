@@ -1,8 +1,11 @@
-import mysql2 from "mysql2"
+import mysql2 from 'mysql2'
+import dotenv from 'dotenv'
+
+dotenv.config()
 
 export const db = mysql2.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "Edm0911!",
-  database: "social"
+  host: process.env.DB_CONNECT_HOST,
+  user: process.env.DB_CONNECT_USER,
+  password: process.env.DB_CONNECT_PASSWORD,
+  database: process.env.DB_CONNECT_DB
 })
