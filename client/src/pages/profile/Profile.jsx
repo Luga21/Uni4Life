@@ -9,6 +9,16 @@ import LanguageIcon from "@mui/icons-material/Language";
 import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import Posts from "../../components/posts/Posts"
+import { useQuery, useMutation, useQueryClient } from "react-query";
+import { makeRequest } from "../../axios";
+
+const { isLoading, error, data } = useQuery(["comme-nts"], () =>
+makeRequest.get("/comments?postId=" + postId).then((res) => {
+  return res.data;
+})
+);
+
+
 
 const Profile = () => {
   return (
