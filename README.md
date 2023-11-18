@@ -13,9 +13,13 @@ Uma plataforma social de conteúdo digital focada no público universitário par
 - Diagrama de classes: https://drive.google.com/file/d/1XhTQu55-ZwzxTN-pVf8EAmAS5ORCBptV/view?usp=sharing
 - Diagrama de Sequência: https://drive.google.com/file/d/14hqxtdcPxKqUESflCSGCsCI_HuhBiAJd/view?usp=sharing
 - Projeto de Design Figma: https://www.figma.com/file/0wCJa2TgkLhDuPBNWMqSjX/Projeto-U4L?type=design&node-id=0-1&mode=design
+- ProfilePics para utilizar nos dados de teste em: https://randomuser.me/photos
 
 ## Ambientes e Infraestrutura
 - MySQL 8.0
+- Criar arquivo de ambiente para as variaveis de conexão com o banco
+- Utilizar o comando 'npm install' para instalar todas as dependencias
+- Manter o node_modules no arquivo .gitignore para não subir ao versionamento
 ```
   CREATE SCHEMA `social` DEFAULT CHARACTER SET utf8 ;
 ```
