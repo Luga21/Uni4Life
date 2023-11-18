@@ -43,16 +43,16 @@ const Share = () => {
     mutation.mutate({desc, img:imgUrl})
     setDesc("")
     setFile(null)
-  } 
+  }
+  
+  
   return (
     <div className="share">
       <div className="container">
         <div className="top">
           <div className="left">
             <img
-              src={currentUser.profilePic}
-              alt=""
-              />
+              src={currentUser.profilePic} alt="" />
             <input type="text" placeholder={`O que você está pensando ${currentUser.name}?`} 
             onChange={(e) => setDesc(e.target.value)}
             value={desc}

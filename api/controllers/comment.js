@@ -31,7 +31,7 @@ export const addComment = (req, res) => {
 
     db.query(q, [values], (err, data) => {
       if (err) return res.status(500).json(err)
-      return res.status(200).json('Comment has been created.')
+      return res.status(200).json('Comentário criado com sucesso.')
     })
   })
 }

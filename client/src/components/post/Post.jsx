@@ -13,13 +13,14 @@ import { makeRequest } from "../../axios";
 import { useQuery } from "react-query"
 import { AuthContext } from "../../context/authContext";
 
+
 const Post = ({ post }) => {
   const [commentOpen, setCommentOpen] = useState(false);
   const {currentUser} = useContext(AuthContext)
 
   const {isLoading, error, data} = useQuery(["likes", post.id], () => 
   makeRequest.get("/likes?postId="+post.id).then((res) => {
-    console.log(data.post.id)
+console.log(data.post.id)
     return res.data;
   })
   )
@@ -61,7 +62,7 @@ const Post = ({ post }) => {
             Compartilhar
           </div>
         </div>
-        {commentOpen && <Comments />}
+        {commentOpen && <Comments postId={post.id}/>}
       </div>
     </div>
   );
