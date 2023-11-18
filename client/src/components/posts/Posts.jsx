@@ -12,12 +12,10 @@ const Posts = () => {
     })
   );
 
-  console.log(data);
-
   return (
     <div className="posts">
       {error  
-        ? "ALguma coisa não ocorreu como esperado"
+        ? "Alguma coisa não ocorreu como esperado"
         : isLoading 
         ? "carregando" 
         : data // Verifica se data existe antes de chamar map
