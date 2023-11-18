@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 import Comments from "../comments/Comments";
 import { useState } from "react";
 
+
 const Post = ({ post }) => {
   const [commentOpen, setCommentOpen] = useState(false);
 
@@ -27,7 +28,7 @@ const Post = ({ post }) => {
               >
                 <span className="name">{post.name}</span>
               </Link>
-              <span className="date">1 min atrás</span>
+              <span className="date">now</span>
             </div>
           </div>
           <MoreHorizIcon />
