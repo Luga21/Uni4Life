@@ -7,12 +7,23 @@ import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 import { Link } from "react-router-dom";
 import Comments from "../comments/Comments";
 import { useState } from "react";
+import { useContext } from "react";
+import moment from "moment";
+import { makeRequest } from "../../axios";
+import { useQuery } from "react-query"
+import { AuthContext } from "../../context/authContext";
 
 const Post = ({ post }) => {
   const [commentOpen, setCommentOpen] = useState(false);
+  const {currentUser} = useContext(AuthContext)
 
-  //TEMPORARY
-  const liked = false;
+  const {isLoading, error, data} = useQuery(["likes", post.id], () => 
+  makeRequest.get("/likes?postId="+post.id).then((res) => {
+    console.log(data.post.id)
+    return res.data;
+  })
+  )
+  console.log(data)
 
   return (
     <div className="post">
@@ -27,7 +38,7 @@ const Post = ({ post }) => {
               >
                 <span className="name">{post.name}</span>
               </Link>
-              <span className="date">{post.createdAt}</span>
+              <span className="date">{moment(post.createdAt).fromNow()}</span>
             </div>
           </div>
           <MoreHorizIcon />
@@ -38,8 +49,8 @@ const Post = ({ post }) => {
         </div>
         <div className="info">
           <div className="item">
-            {liked ? <FavoriteOutlinedIcon /> : <FavoriteBorderOutlinedIcon />}
-            12 Curtidas
+            {data.includes(currentUser.id) ? (<FavoriteOutlinedIcon style={{color:"red"}}/>) : (<FavoriteBorderOutlinedIcon />)}
+            {data.length} Curtidas
           </div>
           <div className="item" onClick={() => setCommentOpen(!commentOpen)}>
             <TextsmsOutlinedIcon />
