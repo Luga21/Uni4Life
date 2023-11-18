@@ -15,11 +15,20 @@ Uma plataforma social de conteúdo digital focada no público universitário par
 - Projeto de Design Figma: https://www.figma.com/file/0wCJa2TgkLhDuPBNWMqSjX/Projeto-U4L?type=design&node-id=0-1&mode=design
 - ProfilePics para utilizar nos dados de teste em: https://randomuser.me/photos
 
-## Ambientes e Infraestrutura
-- MySQL 8.0
-- Criar arquivo de ambiente para as variaveis de conexão com o banco
+# Dicas para projeto
+- Criar arquivo no de ambiente para as variaveis de conexão com o banco
 - Utilizar o comando 'npm install' para instalar todas as dependencias
 - Manter o node_modules no arquivo .gitignore para não subir ao versionamento
+
+# Começando agora?
+- git clone <url>
+- git checkout -f <branch>
+- git add <arquivos>
+- git commit -m "menssagem"
+- git push
+
+## Ambientes e Infraestrutura
+- MySQL 8.0
 ```
   CREATE SCHEMA `social` DEFAULT CHARACTER SET utf8 ;
 ```
