@@ -27,14 +27,14 @@ const Post = ({ post }) => {
               >
                 <span className="name">{post.name}</span>
               </Link>
-              <span className="date">1 min atrás</span>
+              <span className="date">{post.createdAt}</span>
             </div>
           </div>
           <MoreHorizIcon />
         </div>
         <div className="content">
           <p>{post.desc}</p>
-          <img src={post.img} alt="" />
+          <img src={"./upload/" + post.img} alt="" />
         </div>
         <div className="info">
           <div className="item">
