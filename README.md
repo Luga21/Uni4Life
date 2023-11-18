@@ -15,7 +15,7 @@ Uma plataforma social de conteúdo digital focada no público universitário par
 - Projeto de Design Figma: https://www.figma.com/file/0wCJa2TgkLhDuPBNWMqSjX/Projeto-U4L?type=design&node-id=0-1&mode=design
 - ProfilePics para utilizar nos dados de teste em: https://randomuser.me/photos
 
-# Dicas para projeto
+# Dicas para o projeto
 - Criar arquivo no de ambiente para as variaveis de conexão com o banco
 - Utilizar o comando 'npm install' para instalar todas as dependencias
 - Manter o node_modules no arquivo .gitignore para não subir ao versionamento
