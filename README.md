@@ -21,9 +21,9 @@ Uma plataforma social de conteúdo digital focada no público universitário par
 - Manter o node_modules no arquivo .gitignore para não subir ao versionamento
 
 # Começando agora?
-- git clone <url>
-- git checkout -f <branch>
-- git add <arquivos>
+- git clone *url*
+- git checkout -f *branch*
+- git add *arquivos*
 - git commit -m "menssagem"
 - git push
 
