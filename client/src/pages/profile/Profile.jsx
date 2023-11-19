@@ -11,16 +11,17 @@ import MoreVertIcon from "@mui/icons-material/MoreVert";
 import Posts from "../../components/posts/Posts"
 import { useQuery, useMutation, useQueryClient } from "react-query";
 import { makeRequest } from "../../axios";
-
-const { isLoading, error, data } = useQuery(["comme-nts"], () =>
-makeRequest.get("/comments?postId=" + postId).then((res) => {
-  return res.data;
-})
-);
-
-
+import { useLocation } from "react-router-dom";
 
 const Profile = () => {
+  const userId = useLocation().pathname.split("/")[2]
+
+  const { isLoading, error, data } = useQuery(["user"], () =>
+  makeRequest.get("/users/find/" + userId).then((res) => {
+  return res.data;
+  })
+  );
+
   return (
     <div className="profile">
       <div className="images">

@@ -9,7 +9,7 @@ export const getPosts = (req, res) => {
   jwt.verify(token, "secretkey", (err, userInfo) => {
     if (err) return res.status(403).json("Token não é vaálido !")
 
-    const q = `SELECT p.*, u.id, name, profilePic from posts as p
+    const q = `SELECT p.*, u.id AS userid, name, profilePic from posts as p
               JOIN users as u On (u.id = p.userid)
               JOIN relationships as r ON(p.userid = r.followedUserId 
 										AND r.followerUserId = ?) 

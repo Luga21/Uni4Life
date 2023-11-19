@@ -10,21 +10,37 @@ import { useState } from "react";
 import { useContext } from "react";
 import moment from "moment";
 import { makeRequest } from "../../axios";
-import { useQuery } from "react-query"
+import { useMutation, useQuery, useQueryClient } from "react-query"
 import { AuthContext } from "../../context/authContext";
 
 
 const Post = ({ post }) => {
   const [commentOpen, setCommentOpen] = useState(false);
   const {currentUser} = useContext(AuthContext)
+  const queryClient = useQueryClient();
 
   const {isLoading, error, data} = useQuery(["likes", post.id], () => 
-  makeRequest.get("/likes?postId="+post.id).then((res) => {
-console.log(data.post.id)
+    makeRequest.get("/likes?postid="+post.id).then((res) => {
     return res.data;
-  })
-  )
-  console.log(data)
+    })
+  );
+
+  const mutation = useMutation(
+    (liked) => {
+      console.log(liked)
+      if(liked) return makeRequest.delete("/likes?postid="+post.id);
+      return makeRequest.post("/likes", {postId: post.id});
+    },
+    {
+      onSuccess: () => {
+        queryClient.invalidateQueries(["likes"]);
+      }
+    }
+  );
+
+  const handleLike = () => {
+    mutation.mutate(data.includes(currentUser.id))
+  }
 
   return (
     <div className="post">
@@ -34,7 +50,7 @@ console.log(data.post.id)
             <img src={post.profilePic} alt="" />
             <div className="details">
               <Link
-                to={`/profile/${post.userId}`}
+                to={`/profile/${post.userid}`}
                 style={{ textDecoration: "none", color: "inherit" }}
               >
                 <span className="name">{post.name}</span>
@@ -50,7 +66,15 @@ console.log(data.post.id)
         </div>
         <div className="info">
           <div className="item">
-            {data.includes(currentUser.id) ? (<FavoriteOutlinedIcon style={{color:"red"}}/>) : (<FavoriteBorderOutlinedIcon />)}
+            {isLoading ? (
+              "loading"
+            ) : data.includes(currentUser.id) ? (
+              <FavoriteOutlinedIcon 
+                style={{color:"red"}}
+                onClick={handleLike}/>
+                ) : (
+                <FavoriteBorderOutlinedIcon onClick={handleLike} />
+            )}
             {data.length} Curtidas
           </div>
           <div className="item" onClick={() => setCommentOpen(!commentOpen)}>
