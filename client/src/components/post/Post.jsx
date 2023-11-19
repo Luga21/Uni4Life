@@ -10,37 +10,40 @@ import { useState } from "react";
 import { useContext } from "react";
 import moment from "moment";
 import { makeRequest } from "../../axios";
-import { useMutation, useQuery, useQueryClient } from "react-query"
+import { useMutation, useQuery, useQueryClient } from "react-query";
 import { AuthContext } from "../../context/authContext";
-
 
 const Post = ({ post }) => {
   const [commentOpen, setCommentOpen] = useState(false);
-  const {currentUser} = useContext(AuthContext)
+  const { currentUser } = useContext(AuthContext);
   const queryClient = useQueryClient();
 
-  const {isLoading, error, data} = useQuery(["likes", post.id], () => 
-    makeRequest.get("/likes?postid="+post.id).then((res) => {
-    return res.data;
+  const {
+    isLoading,
+    error,
+    data = 0,
+  } = useQuery(["likes", post.id], () =>
+    makeRequest.get("/likes?postid=" + post.id).then((res) => {
+      return res.data;
     })
   );
 
   const mutation = useMutation(
     (liked) => {
-      console.log(liked)
-      if(liked) return makeRequest.delete("/likes?postid="+post.id);
-      return makeRequest.post("/likes", {postId: post.id});
+      console.log(liked);
+      if (liked) return makeRequest.delete("/likes?postid=" + post.id);
+      return makeRequest.post("/likes", { postId: post.id });
     },
     {
       onSuccess: () => {
         queryClient.invalidateQueries(["likes"]);
-      }
+      },
     }
   );
 
   const handleLike = () => {
-    mutation.mutate(data.includes(currentUser.id))
-  }
+    mutation.mutate(data.includes(currentUser.id));
+  };
 
   return (
     <div className="post">
@@ -69,24 +72,25 @@ const Post = ({ post }) => {
             {isLoading ? (
               "loading"
             ) : data.includes(currentUser.id) ? (
-              <FavoriteOutlinedIcon 
-                style={{color:"red"}}
-                onClick={handleLike}/>
-                ) : (
-                <FavoriteBorderOutlinedIcon onClick={handleLike} />
+              <FavoriteOutlinedIcon
+                style={{ color: "red" }}
+                onClick={handleLike}
+              />
+            ) : (
+              <FavoriteBorderOutlinedIcon onClick={handleLike} />
             )}
             {data.length} Curtidas
           </div>
           <div className="item" onClick={() => setCommentOpen(!commentOpen)}>
             <TextsmsOutlinedIcon />
-            12 Comentários
+            Comentários
           </div>
           <div className="item">
             <ShareOutlinedIcon />
             Compartilhar
           </div>
         </div>
-        {commentOpen && <Comments postId={post.id}/>}
+        {commentOpen && <Comments postId={post.id} />}
       </div>
     </div>
   );
