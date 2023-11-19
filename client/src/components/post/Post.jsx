@@ -10,13 +10,12 @@ import { useState } from "react";
 import { useContext } from "react";
 import moment from "moment";
 import { makeRequest } from "../../axios";
-import { useMutation, useQuery, useQueryClient } from "react-query"
+import { useMutation, useQuery, useQueryClient } from "react-query";
 import { AuthContext } from "../../context/authContext";
-
 
 const Post = ({ post }) => {
   const [commentOpen, setCommentOpen] = useState(false);
-  const {currentUser} = useContext(AuthContext)
+  const { currentUser } = useContext(AuthContext);
   const queryClient = useQueryClient();
   
   const {isLoading, error, data = 0} = useQuery(["likes", post.id], () => 
@@ -33,13 +32,13 @@ const Post = ({ post }) => {
     {
       onSuccess: () => {
         queryClient.invalidateQueries(["likes"]);
-      }
+      },
     }
   );
 
   const handleLike = () => {
-    mutation.mutate(data.includes(currentUser.id))
-  }
+    mutation.mutate(data.includes(currentUser.id));
+  };
 
   return (
     <div className="post">
@@ -68,24 +67,25 @@ const Post = ({ post }) => {
             {isLoading ? (
               "Carregando"
             ) : data.includes(currentUser.id) ? (
-              <FavoriteOutlinedIcon 
-                style={{color:"red"}}
-                onClick={handleLike}/>
-                ) : (
-                <FavoriteBorderOutlinedIcon onClick={handleLike} />
+              <FavoriteOutlinedIcon
+                style={{ color: "red" }}
+                onClick={handleLike}
+              />
+            ) : (
+              <FavoriteBorderOutlinedIcon onClick={handleLike} />
             )}
             {data.length} Curtidas
           </div>
           <div className="item" onClick={() => setCommentOpen(!commentOpen)}>
             <TextsmsOutlinedIcon />
-            12 Comentários
+            Comentários
           </div>
           <div className="item">
             <ShareOutlinedIcon />
             Compartilhar
           </div>
         </div>
-        {commentOpen && <Comments postId={post.id}/>}
+        {commentOpen && <Comments postId={post.id} />}
       </div>
     </div>
   );

@@ -8,7 +8,7 @@ import PlaceIcon from "@mui/icons-material/Place";
 import LanguageIcon from "@mui/icons-material/Language";
 import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
-import Posts from "../../components/posts/Posts"
+import Posts from "../../components/posts/Posts";
 import { useQuery, useMutation, useQueryClient } from "react-query";
 import { makeRequest } from "../../axios";
 import { useLocation } from "react-router-dom";
@@ -35,6 +35,7 @@ const Profile = () => {
   }))
   
   const queryClient = useQueryClient()
+
   const mutation = useMutation(
     (following) => {
       if(following) return makeRequest.delete("/relationships?userid="+userId)
@@ -46,9 +47,10 @@ const Profile = () => {
       }
     }
   )
+
   const handleFollow = () => {
-    mutation.mutate(relationshipData.includes(currentUser.id))
-  }
+    mutation.mutate(relationshipData.includes(currentUser.id));
+  };
 
   return (
     <div className="profile">
