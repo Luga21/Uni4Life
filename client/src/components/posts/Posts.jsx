@@ -4,10 +4,10 @@ import "./posts.scss";
 import { useQuery } from 'react-query';
 
 
-const Posts = () => {
+const Posts = ({userId}) => {
   // eslint-disable-next-line no-unused-vars
   const { isLoading, error, data } = useQuery(["posts"], () =>
-    makeRequest.get("/posts").then((res) => {
+    makeRequest.get("/posts?userId="+userId).then((res) => {
       return res.data;
     })
   );

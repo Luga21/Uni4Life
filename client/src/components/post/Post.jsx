@@ -18,8 +18,8 @@ const Post = ({ post }) => {
   const [commentOpen, setCommentOpen] = useState(false);
   const {currentUser} = useContext(AuthContext)
   const queryClient = useQueryClient();
-
-  const {isLoading, error, data} = useQuery(["likes", post.id], () => 
+  
+  const {isLoading, error, data = 0} = useQuery(["likes", post.id], () => 
     makeRequest.get("/likes?postid="+post.id).then((res) => {
     return res.data;
     })
@@ -27,7 +27,6 @@ const Post = ({ post }) => {
 
   const mutation = useMutation(
     (liked) => {
-      console.log(liked)
       if(liked) return makeRequest.delete("/likes?postid="+post.id);
       return makeRequest.post("/likes", {postId: post.id});
     },
@@ -67,7 +66,7 @@ const Post = ({ post }) => {
         <div className="info">
           <div className="item">
             {isLoading ? (
-              "loading"
+              "Carregando"
             ) : data.includes(currentUser.id) ? (
               <FavoriteOutlinedIcon 
                 style={{color:"red"}}

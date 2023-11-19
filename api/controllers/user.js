@@ -14,10 +14,10 @@ export const getUser = (req, res) => {
 
 export const updateUser = (req, res) => {
   const token = req.cookies.accessToken
-  if (!token) return res.status(401).json("Not authenticated!")
+  if (!token) return res.status(401).json("Não autenticado!")
 
   jwt.verify(token, "secretkey", (err, userInfo) => {
-    if (err) return res.status(403).json("Token is not valid!")
+    if (err) return res.status(403).json("Token não é valido!")
 
     const q =
       "UPDATE users SET `name`=?,`city`=?,`website`=?,`profilePic`=?,`coverPic`=? WHERE id=? "
@@ -34,7 +34,7 @@ export const updateUser = (req, res) => {
       ],
       (err, data) => {
         if (err) res.status(500).json(err)
-        if (data.affectedRows > 0) return res.json("Updated!")
+        if (data.affectedRows > 0) return res.json("Atualizado!")
         return res.status(403).json("You can update only your post!")
       }
     )
