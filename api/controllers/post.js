@@ -9,7 +9,6 @@ export const getPosts = (req, res) => {
 
   jwt.verify(token, "secretkey", (err, userInfo) => {
     if (err) return res.status(403).json("Token não é vaálido !")
-
     const q =
       userId !== "undefined"
         ? `SELECT p.*, u.id AS userid, name, profilePic from posts as p JOIN users AS u ON (u.id = p.userid) WHERE p.userid = ? ORDER BY p.createdAt DESC`
@@ -23,7 +22,6 @@ export const getPosts = (req, res) => {
     //       OR (p.userid = ?)
     // GROUP BY p.id
     // ORDER BY createdAt desc`
-
     const values =
       userId !== "undefined" ? [userId] : [userInfo.id, userInfo.id]
 

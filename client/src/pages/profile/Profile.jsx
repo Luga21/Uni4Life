@@ -12,7 +12,7 @@ import Posts from "../../components/posts/Posts";
 import { useQuery, useMutation, useQueryClient } from "react-query";
 import { makeRequest } from "../../axios";
 import { useLocation } from "react-router-dom";
-import Update from "../../components/update/Update";
+import Update2 from "../../components/update/Update2";
 import { useContext } from "react";
 import { AuthContext } from "../../context/authContext";
 import { useState } from "react";
@@ -35,7 +35,6 @@ const Profile = () => {
   }))
   
   const queryClient = useQueryClient()
-
   const mutation = useMutation(
     (following) => {
       if(following) return makeRequest.delete("/relationships?userid="+userId)
@@ -51,7 +50,7 @@ const Profile = () => {
   const handleFollow = () => {
     mutation.mutate(relationshipData.includes(currentUser.id));
   };
-
+ 
   return (
     <div className="profile">
       { isLoading ? (
@@ -60,12 +59,12 @@ const Profile = () => {
         <>
       <div className="images">
         <img
-          src={data.coverPic}
+          src={"/upload/"+data.coverPic}
           alt=""
           className="cover"
         />
         <img
-          src={data.profilePic}
+          src={"/upload/"+data.profilePic}
           alt=""
           className="profilePic"
         />
@@ -104,7 +103,7 @@ const Profile = () => {
             {rIsLoading ? (
               "Carregando"
             ) : userId === currentUser.id ? (
-              <button onClick={() => setOpenUpdate(true)}>update</button>
+              <button onClick={() => setOpenUpdate(true)}>Atualizar</button>
             ) : (
               <button onClick={handleFollow}>
                 {relationshipData.includes(currentUser.id)
@@ -121,7 +120,7 @@ const Profile = () => {
       <Posts userId={userId}/>
       </div>
       </>)}
-      {openUpdate && <Update setOpenUpdate={setOpenUpdate} user={data}/>}
+      {openUpdate && <Update2 setOpenUpdate={setOpenUpdate} user={data}/>}
     </div>
   );
 };

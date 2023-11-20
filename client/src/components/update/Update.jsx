@@ -38,7 +38,7 @@ const Update = ({setOpenUpdate, user}) => {
       },
     }
   )
-  console.log(user)
+  
   const handleClick = async (e) => {
     e.preventDefault()
     let coverUrl;
@@ -52,16 +52,22 @@ const Update = ({setOpenUpdate, user}) => {
   
   return (
     <div className="update">
-      Update
-      <form>
-        <input type="file" onChange={e=>setCover(e.target.files[0])}/>
-        <input type="file" onChange={e=>setProfile(e.target.files[0])}/>
-        <input type="text" placeholder="nome" name="name" onChange={handleChange}/>
-        <input type="text" placeholder="cidade" name="city" onChange={handleChange}/>
-        <input type="text" placeholder="website"name="website" onChange={handleChange}/>
-        <button onClick={handleClick}>Update</button>
-      </form>
-      <button onClick={() => setOpenUpdate(false)}>X</button>
+      
+      <button className="close_button" onClick={() => setOpenUpdate(false)}>X</button>
+      <div className="form">
+        
+        <form>
+          <h1>Atualização de dados</h1>
+          <label for="setCover">Foto de capa</label>
+          <input type="file" id="setCover" onChange={e=>setCover(e.target.files[0])}/>
+          <label for="setProfilePic">Foto de perfil</label>
+          <input type="file" id="setProfilePic" onChange={e=>setProfile(e.target.files[0])}/>
+          <input type="text" placeholder="Nome" name="name" onChange={handleChange}/>
+          <input type="text" placeholder="Cidade" name="city" onChange={handleChange}/>
+          <input type="text" placeholder="Website"name="website" onChange={handleChange}/>
+          <button onClick={handleClick}>Atualizar</button>
+        </form>
+      </div>
     </div>
   )
 }
