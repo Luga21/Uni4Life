@@ -2,15 +2,18 @@
   background-color: rgb(255, 255, 255);
   min-height: 600px;
 
-  .left{
+  .left {
     background-image: url('../../assets/logoU4L.svg');
     background-repeat: repeat;
     float: left;
-    width: 40vw;
+    width: 42vw;
     height: 100vh;
+    position: absolute;
   }
-  
+
   .right {
+    position: relative;
+    float: right;
     background-color: #3366FF;
     width: 60vw;
     height: 100vh;
@@ -20,43 +23,46 @@
     flex-direction: column;
     gap: 30px;
     color: white;
-    
-    .right_login_header{
-      width: 20vw;
-      margin-top: 20vh;
+
+    .right_login_header {
+      display: flex;
+      width: 60%;
+      margin-top: 80px;
       align-items: center;
       justify-content: center;
+      flex-direction: column;
 
-      h3, p {
-          color: #2d1070;
-        }
+      h3,
+      p {
+        color: #2d1070;
+      }
 
       h1 {
-          font-size: 93px;
-          line-height: 100px;
-          background: linear-gradient(to right,
-              white 10%,
-              #d0bcff 20%,
-              #8d74c9 30%,
-              #5d4594 40%,
-              #543c8b 50%,
-              #4d3585 60%,
-              #462e7e 70%,
-              rgb(54, 33, 102) 80%,
-              #331970 90%);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-        }
+        font-size: 93px;
+        line-height: 100px;
+        background: linear-gradient(to right,
+            white 10%,
+            #d0bcff 20%,
+            #8d74c9 30%,
+            #5d4594 40%,
+            #543c8b 50%,
+            #4d3585 60%,
+            #462e7e 70%,
+            rgb(54, 33, 102) 80%,
+            #331970 90%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
 
     }
 
     .right_login_footer {
-      width: 20vw;
+      width: 50%;
       display: flex;
       align-items: baseline;
-      justify-content: left;
+      justify-content: center;
       flex-direction: row;
-      margin-top: 30px;
+      margin-bottom: 20px;
       gap: 10px;
 
       button {
@@ -70,7 +76,7 @@
         font-weight: bold;
         cursor: pointer;
       }
-      
+
       button:hover {
         background-color: #827cf0;
         transition: 0.4s;
@@ -81,45 +87,49 @@
       width: 20vw;
       display: flex;
       flex-direction: column;
+
       h1 {
-      color: #2d1070;
-      font-size: 50px;
+        color: #2d1070;
+        font-size: 50px;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+
+        input {
+          width: 100%;
+          border: none;
+          border-radius: 5px;
+          border-bottom: 1px solid lightgray;
+          padding: 20px 10px;
+        }
+
+        button {
+          width: 30%;
+          padding: 10px;
+          border: none;
+          border-radius: 5px;
+          background-color: #2d1070;
+          color: white;
+          font-weight: bold;
+          cursor: pointer;
+        }
+
+        button:hover {
+          background-color: #827cf0;
+          transition: 0.4s;
+        }
+      }
     }
-    
-    form {
-      display: flex;
-      flex-direction: column;
-      gap: 30px;
-      
-      input {
-      width: 100%;
-      border: none;
-      border-radius: 5px;
-      border-bottom: 1px solid lightgray;
-      padding: 20px 10px;
-      }
-      
-      button {
-        width: 30%;
-        padding: 10px;
-        border: none;
-        border-radius: 5px;
-        background-color: #2d1070;
-        color: white;
-        font-weight: bold;
-        cursor: pointer;
-      }
-      button:hover{
-        background-color: #827cf0;
-        transition: 0.4s;
-      }
-    }
-  }
+
     h1 {
       font-size: 100px;
       line-height: 100px;
     }
-    p{
+
+    p {
       font-size: large;
       font-weight: bold;
     }

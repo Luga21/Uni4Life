@@ -1,6 +1,7 @@
 .register {
   background-color: rgb(255, 255, 255);
   min-height: 600px;
+
   .right {
     background-image: url('../../assets/logoU4L.svg');
     background-repeat: repeat;
@@ -10,6 +11,7 @@
   }
 
   .left {
+    position: absolute;
     float: left;
     background-color: #3366FF;
     width: 60vw;
@@ -18,33 +20,36 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    gap: 30px;
+    gap: 10px;
     color: white;
 
     .left_register_header {
-      width: 20vw;
-      margin-top: 80px;
+      width: 30vw;
+      margin-top: 30px;
       align-items: center;
       justify-content: center;
+      display: flex;
+      flex-direction: column;
 
-      h3{
+      h3 {
         color: #2d1070;
       }
-      h1{
+
+      h1 {
         font-size: 93px;
         line-height: 100px;
         background: linear-gradient(to right,
-              white 10%,
-              #d0bcff 20%,
-              #8d74c9 30%,
-              #5d4594 40%,
-              #543c8b 50%,
-              #4d3585 60%,
-              #462e7e 70%,
-              rgb(54, 33, 102) 80%,
-              #331970 90%);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
+            white 10%,
+            #d0bcff 20%,
+            #8d74c9 30%,
+            #5d4594 40%,
+            #543c8b 50%,
+            #4d3585 60%,
+            #462e7e 70%,
+            rgb(54, 33, 102) 80%,
+            #331970 90%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
       }
     }
 
@@ -52,10 +57,11 @@
       width: 20vw;
       display: flex;
       flex-direction: column;
+      margin-top: -10px;
 
       h1 {
         color: #2d1070;
-        font-size: 50px;
+        font-size: 40px;
       }
 
       form {
@@ -81,7 +87,7 @@
           font-weight: bold;
           cursor: pointer;
         }
-        
+
         button:hover {
           background-color: #827cf0;
           transition: 0.4s;
@@ -90,15 +96,15 @@
     }
 
     .left_register_footer {
-      width: 20vw;
+      width: 30vw;
       display: flex;
       align-items: baseline;
       justify-content: left;
       flex-direction: row;
-      margin-top: 30px;
       gap: 10px;
+      margin-top: -30px;
 
-      button{
+      button {
         margin-top: 30px;
         width: 200%;
         padding: 10px;
@@ -109,11 +115,13 @@
         font-weight: bold;
         cursor: pointer;
       }
+
       button:hover {
         background-color: #827cf0;
         transition: 0.4s;
       }
     }
+
     h1 {
       font-size: 100px;
       line-height: 100px;
